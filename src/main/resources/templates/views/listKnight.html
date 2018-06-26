@@ -7,7 +7,6 @@
     </head>
     <body>
         <div layout:fragment="content"  class="container mySpace">
-           
             <table>
                 <thead>
                     <tr>
@@ -18,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="knight : ${knights}">
+                    <tr th:each="knight:${knights}">
                         <td th:text="${knight.dignity}"></td>
                         <td th:text="${knight.level}"></td>
                         <td th:text="${knight.age}"></td>
@@ -33,5 +32,6 @@
                 </a>
             </div>
         </div>
+
     </body>
 </html>

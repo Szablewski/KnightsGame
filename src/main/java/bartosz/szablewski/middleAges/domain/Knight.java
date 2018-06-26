@@ -21,8 +21,8 @@ import org.hibernate.validator.constraints.Range;
 public class Knight {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
     @Size(min = 2, max = 35, message = "Imie rycerza musi mieć między 2, a 35 znaków")
     private String dignity;
     @Range(min = 16, max = 50, message = "Wiek rycerza nie może być większy niż 50 i mniejszy niż 16")

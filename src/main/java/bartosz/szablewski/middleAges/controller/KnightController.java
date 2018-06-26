@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -58,10 +57,11 @@ public class KnightController {
             return "redirect:/findAll";
         }
     }
-    
+
     @GetMapping("/delete/{id}")
-    public String deleteKnight(@PathVariable("id") Long id){
+    public String deleteKnight(@PathVariable("id") Long id) {
         knightService.deleteKnight(id);
         return "redirect:/findAll";
     }
+
 }

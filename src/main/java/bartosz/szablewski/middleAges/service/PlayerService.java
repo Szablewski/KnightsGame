@@ -47,4 +47,8 @@ public class PlayerService {
         }
         return false;
     }
+    
+    public List<Player> findByEmailLike(String email) {
+        return playerRepository.findByEmailLike("%" + email + "%");
+    }
 }

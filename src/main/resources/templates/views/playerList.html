@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/main_layout}">
+    <head>
+
+    </head>
+    <body>
+        <div layout:fragment="content" class="container mySpace">
+            <form action="/playerList" class="form-inline">
+                <div class="form-group mb-2">
+                    <input type="text" class="form-control" name="email" placeholder="Znajdź Gracza" />
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </form>
+            <div class="card">
+                <div class="card card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Imię</th>
+                                <th>Nazwisko</th>
+                                <th>Stan Konta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="player:${players}">
+                                <td th:text="${player.email}"></td>
+                                <td th:text="${player.firstName}"></td>
+                                <td th:text="${player.lastName}"></td>
+                                <td>Aktywne</td>                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

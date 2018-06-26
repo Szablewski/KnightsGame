@@ -23,6 +23,7 @@
                         <td th:text="${knight.level}"></td>
                         <td th:text="${knight.age}"></td>
                         <td>AKTUALNE ZADANIE</td>
+                        <td> <a th:href="${'/delete/'+knight.id}">Zwolnij rycerza</a></td>
                     </tr>
                 </tbody>
             </table>

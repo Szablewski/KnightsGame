@@ -17,23 +17,19 @@
                     </div>
                     <form th:action="@{/register}" th:object="${player}" method="post">
                         <div class="form-group">
-                            <label for="email" class="form-cntrol-label">Email</label>
-                            <input type="text" class="form-control" th:field="*{email}" id="email"/>
+                            <input type="text" class="form-control"placeholder="Email" th:field="*{email}" id="email"/>
                             <div class="text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="form-cntrol-label">Hasło</label>
-                            <input type="password" class="form-control" th:field="*{password}" id="password"/>
+                            <input type="password" class="form-control" placeholder="Hasło" th:field="*{password}" id="password"/>
                             <div class="text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
                         </div>
                         <div class="form-group">
-                            <label for="firstName" class="form-cntrol-label">Imię</label>
-                            <input type="text" class="form-control" th:field="*{firstName}" id="firstName"/>
+                            <input type="text" class="form-control" placeholder="Imie" th:field="*{firstName}" id="firstName"/>
                             <div class="text text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
                         </div>
                         <div class="form-group">
-                            <label for="lastName" class="form-cntrol-label">Nazwisko</label>
-                            <input type="text" class="form-control" th:field="*{lastName}" id="lastName"/>
+                            <input type="text" class="form-control" placeholder="Nazwisko" th:field="*{lastName}" id="lastName"/>
                             <div class="text text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
                         </div>
                         <input type="submit" value="Submit" class="btn btn-primary"/>

@@ -57,11 +57,4 @@ public class KnightController {
             return "redirect:/findAll";
         }
     }
-
-    @GetMapping("/delete/{id}")
-    public String deleteKnight(@PathVariable("id") Long id) {
-        knightService.deleteKnight(id);
-        return "redirect:/findAll";
-    }
-
 }

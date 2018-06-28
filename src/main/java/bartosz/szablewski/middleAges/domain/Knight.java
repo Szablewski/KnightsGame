@@ -1,5 +1,6 @@
 package bartosz.szablewski.middleAges.domain;
 
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -43,6 +44,52 @@ public class Knight {
         this.age = age;
         this.level = 1;
         this.player = player;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.id);
+        hash = 89 * hash + Objects.hashCode(this.dignity);
+        hash = 89 * hash + this.age;
+        hash = 89 * hash + this.level;
+        hash = 89 * hash + Objects.hashCode(this.player);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Knight other = (Knight) obj;
+        if (this.age != other.age) {
+            return false;
+        }
+        if (this.level != other.level) {
+            return false;
+        }
+        if (!Objects.equals(this.dignity, other.dignity)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Knight{" + "id=" + id + ", dignity=" + dignity + ", age=" + age + ", level=" + level + ", player=" + player + '}';
     }
 
 }

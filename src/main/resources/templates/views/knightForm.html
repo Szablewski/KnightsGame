@@ -10,16 +10,14 @@
         <div layout:fragment="content" class="container mySpace">
             <form class="form-horizontal" th:object="${knight}" th:action="@{/saveKnight}" th:method="post">
                 <div class="form-group">
-                    <label class="control-label" >Imie:</label>
-                    <input type="text" class="form-control" th:field="*{dignity}" />
+                    <input type="text" class="form-control" placeholder="Imię" th:field="*{dignity}" />
                     <div class="text text-danger">
                         <p th:if="${#fields.hasErrors('dignity')}" th:errors="*{dignity}"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" >Wiek:</label>
-                    <input type="number" class="form-control" th:field="*{age}" />
+                    <input type="number" class="form-control" placeholder="Wiek" th:field="*{age}" />
                     <div class="text text-danger">
                         <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}"/>
                     </div>

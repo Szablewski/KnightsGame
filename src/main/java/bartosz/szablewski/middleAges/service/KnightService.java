@@ -22,8 +22,4 @@ public class KnightService {
         knight.setPlayer(player);
         knightRepository.save(knight);
     }
-    
-    public void deleteKnight(Long id){
-        knightRepository.delete(id);
-    }
 }

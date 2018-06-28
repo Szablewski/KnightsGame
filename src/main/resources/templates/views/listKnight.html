@@ -7,13 +7,13 @@
     </head>
     <body>
         <div layout:fragment="content"  class="container mySpace">
-            <table>
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <td>Imie</td>
-                        <td>Poziom</td>
-                        <td>Wiek</td>
-                        <td>Zadania</td>
+                        <th scope="col">Imie</th>
+                        <th scope="col">Poziom</th>
+                        <th scope="col">Wiek</th>
+                        <th scope="col">Zadania</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,7 +22,6 @@
                         <td th:text="${knight.level}"></td>
                         <td th:text="${knight.age}"></td>
                         <td>AKTUALNE ZADANIE</td>
-                        <td> <a th:href="${'/delete/'+knight.id}">Zwolnij rycerza</a></td>
                     </tr>
                 </tbody>
             </table>
